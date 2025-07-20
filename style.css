@@ -56,24 +56,24 @@ header h1 {
   box-shadow: 0 12px 25px rgba(0,0,0,0.2);
 }
 
-/* 푸터 - 완전 심플 단색 */
+/* 부드럽고 자연스러운 푸터 스타일 */
 
 footer {
   margin-top: auto;
   padding: 20px 0;
   width: 100%;
   text-align: center;
-  border-top: 1px solid #ddd;
+  border-top: 1px solid #eee;
   font-family: 'Arial', sans-serif;
   font-size: 1rem;
-  letter-spacing: 0.15em;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: #444;
+  color: #777;
   user-select: none;
 }
 
 .footer-names {
-  font-weight: 600;
-  color: #444;
+  font-weight: 500;
+  color: #666;
   user-select: none;
 }
