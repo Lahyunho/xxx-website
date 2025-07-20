@@ -14,6 +14,8 @@ body {
 header {
   text-align: center;
   margin-bottom: 40px;
+  border-bottom: 1px solid #eee; /* 상단 구분선 추가 */
+  padding-bottom: 20px;
 }
 
 header h1 {
@@ -39,6 +41,7 @@ header h1 {
   max-width: 960px;
   width: 100%;
   justify-content: center;
+  margin-bottom: 40px; /* 이미지 아래 간격 */
 }
 
 .image-row img {
@@ -56,24 +59,26 @@ header h1 {
   box-shadow: 0 12px 25px rgba(0,0,0,0.2);
 }
 
-/* 부드럽고 자연스러운 푸터 스타일 */
+/* 푸터 스타일 */
 
 footer {
   margin-top: auto;
   padding: 20px 0;
   width: 100%;
   text-align: center;
-  border-top: 1px solid #eee;
+  border-top: 1px solid #eee; /* 푸터 구분선 */
   font-family: 'Arial', sans-serif;
   font-size: 1rem;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: #777;
+  color: #444; /* 약간 진한 회색 */
   user-select: none;
+  background-color: #fafafa; /* 약간 연한 배경색으로 자연스러운 구분 */
 }
 
 .footer-names {
-  font-weight: 500;
-  color: #666;
+  font-weight: 600;
+  color: #2e3b4e; /* 이미지에서 영감을 받은 차분한 딥블루 계열 */
   user-select: none;
+  letter-spacing: 0.15em;
 }
