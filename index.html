@@ -5,19 +5,134 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>xxx</title>
   <link rel="stylesheet" href="style.css"/>
+  <style>
+    /* 페이지 내용 숨김 */
+    #content {
+      display: none;
+    }
+    /* 비밀번호 입력창 전체 배경 */
+    #password-prompt {
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: #000; /* 완전 검은색 */
+      color: #eee;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      font-family: 'Arial', sans-serif;
+      z-index: 9999;
+      padding: 0 20px;
+      text-align: center;
+    }
+    #password-prompt label {
+      font-size: 1.4rem;
+      letter-spacing: 0.15em;
+      margin-bottom: 12px;
+      user-select: none;
+    }
+    #password-prompt input {
+      padding: 12px 18px;
+      font-size: 1.3rem;
+      border-radius: 6px;
+      border: 2px solid #444;
+      background-color: #111;
+      color: #eee;
+      width: 250px;
+      text-align: center;
+      outline: none;
+      transition: border-color 0.3s ease;
+    }
+    #password-prompt input:focus {
+      border-color: #00bfa5;
+      background-color: #222;
+    }
+    #password-prompt button {
+      margin-top: 20px;
+      padding: 10px 28px;
+      font-size: 1.1rem;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      background-color: #00bfa5;
+      color: #000;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      transition: background-color 0.3s ease;
+      user-select: none;
+    }
+    #password-prompt button:hover {
+      background-color: #009e8f;
+    }
+    #password-error {
+      margin-top: 14px;
+      min-height: 1.2em;
+      font-size: 1rem;
+      color: #ff4444; /* 선명한 붉은색 */
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      user-select: none;
+      opacity: 0;
+      transition: opacity 0.4s ease;
+    }
+    #password-error.visible {
+      opacity: 1;
+    }
+  </style>
 </head>
 <body>
-  <header>
-    <h1>xxx</h1>
-    <p class="subtitle">COMING OUT SOON</p>
-  </header>
-  <main class="image-row">
-    <img src="img1.jpg" alt="img1">
-    <img src="img2.jpg" alt="img2">
-    <img src="img3.jpg" alt="img3">
-  </main>
-  <footer>
-    <p class="footer-names">백승우 &nbsp;&middot;&nbsp; 라현호</p>
-  </footer>
+  <div id="password-prompt">
+    <label for="password-input">비밀번호를 입력하세요</label>
+    <input type="password" id="password-input" autocomplete="off" />
+    <button id="password-submit">입력</button>
+    <div id="password-error"></div>
+  </div>
+
+  <div id="content">
+    <header>
+      <h1>xxx</h1>
+      <p class="subtitle">COMING OUT SOON</p>
+    </header>
+    <main class="image-row">
+      <img src="img1.jpg" alt="img1" />
+      <img src="img2.jpg" alt="img2" />
+      <img src="img3.jpg" alt="img3" />
+    </main>
+    <footer>
+      <p class="footer-names">백승우 &nbsp;&middot;&nbsp; 라현호</p>
+    </footer>
+  </div>
+
+  <script>
+    const passwordPrompt = document.getElementById('password-prompt');
+    const passwordInput = document.getElementById('password-input');
+    const passwordSubmit = document.getElementById('password-submit');
+    const passwordError = document.getElementById('password-error');
+
+    const correctPassword = 'xxx';
+
+    function checkPassword() {
+      if (passwordInput.value === correctPassword) {
+        passwordPrompt.style.display = 'none';
+        document.getElementById('content').style.display = 'block';
+      } else {
+        passwordError.textContent = '비밀번호가 틀렸습니다.';
+        passwordError.classList.add('visible');
+        passwordInput.value = '';
+        passwordInput.focus();
+      }
+    }
+
+    passwordSubmit.addEventListener('click', checkPassword);
+    passwordInput.addEventListener('keyup', (event) => {
+      if (event.key === 'Enter') {
+        checkPassword();
+      }
+    });
+
+    window.onload = () => {
+      passwordInput.focus();
+    };
+  </script>
 </body>
 </html>
