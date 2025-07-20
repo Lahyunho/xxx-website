@@ -56,36 +56,23 @@ header h1 {
   box-shadow: 0 12px 25px rgba(0,0,0,0.2);
 }
 
+/* 푸터 스타일 - 상단과 톤 맞추기 */
 footer {
   margin-top: auto;
   padding: 20px 0;
   width: 100%;
   text-align: center;
-  border-top: 1px solid #ddd;
-  font-family: 'Courier New', Courier, monospace;
-  font-size: 0.9rem;
-  letter-spacing: 0.2em;
+  border-top: 1px solid #eee;
+  font-family: 'Arial', sans-serif;
+  font-size: 1rem;
+  letter-spacing: 0.15em;
   text-transform: uppercase;
+  color: #555;
   user-select: none;
-  background: linear-gradient(90deg, #111, #444);
-  color: #eee;
-  text-shadow: 0 0 5px #00ffcc, 0 0 10px #00ffcc;
 }
 
 .footer-names {
-  display: inline-block;
-  padding: 6px 12px;
-  border: 1px solid #00ffcc;
-  border-radius: 6px;
-  backdrop-filter: blur(6px);
-  background: rgba(0, 255, 204, 0.1);
-  cursor: default;
-  transition: all 0.3s ease;
-}
-
-.footer-names:hover {
-  color: #00ffcc;
-  text-shadow: 0 0 12px #00ffcc, 0 0 24px #00ffcc;
-  border-color: #00ffcc;
-  background: rgba(0, 255, 204, 0.3);
+  font-weight: 600;
+  color: #111;
+  user-select: none;
 }
